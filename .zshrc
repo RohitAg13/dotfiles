@@ -2,16 +2,18 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
-export ZSH="/home/rohit/.oh-my-zsh"
+export ZSH="/Users/rohit/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-#ZSH_THEME="agnoster"
+ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -102,27 +104,34 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
 
-# >>> conda init >>>
+# >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/rohit/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+__conda_setup="$('/Users/rohit/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
+    eval "$__conda_setup"
 else
-    if [ -f "/home/rohit/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/rohit/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
+    if [ -f "/Users/rohit/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/rohit/anaconda3/etc/profile.d/conda.sh"
     else
-\export PATH="/home/rohit/anaconda3/bin:$PATH"
- fi
+        export PATH="/Users/rohit/anaconda3/bin:$PATH"
+    fi
 fi
 unset __conda_setup
-# <<< conda init <<<
+# <<< conda initialize <<<
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias tmp="cd /home/rohit/Documents/Rohit/tmp"
-alias doc="cd /home/rohit/Documents/Rohit"
+alias zshconfig="vi ~/.zshrc"
+alias ohmyzsh="vi ~/.oh-my-zsh"
+alias tmp="cd /Users/rohit/Documents/tmp"
+alias doc="cd /Users/rohit/Documents"
 alias cls="clear"
+alias epic="cd /Users/rohit/Documents/epic/aml_github/"
+alias sl="ls"
+alias backup="cd /Users/rohit/Documents/tmp/BACKUP"
+alias config='/usr/bin/git --git-dir=/Users/rohit/.cfg/ --work-tree=/Users/rohit'
+# Vim Locale Error
+export LC_ALL=en_US.UTF-8
+# Tmux path for conda
+export PATH="/Users/rohit/anaconda3/bin:$PATH"
+eval $(thefuck --alias)

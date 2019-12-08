@@ -1,11 +1,16 @@
 set nocompatible              " required
 set clipboard=unnamedplus
 filetype off                  " required
+set backspace=indent,eol,start
 
 set foldmethod=indent
 set foldlevel=99
 
-set nu
+set foldcolumn=3
+set mouse=a
+
+" set line number and relatice number
+set nu rnu
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -17,23 +22,34 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview=1
 
+"Autocomplete
+Plugin 'davidhalter/jedi-vim'
+let g:jedi#auto_initialization = 1
+let g:jedi#auto_vim_configuration = 1
+let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#popup_on_dot = 1
+let g:jedi#popup_select_first = 1
+let g:jedi#completions_enabled = 1
+
 "autocomplete
-Plugin 'Valloric/YouCompleteMe'
-let g:ycm_autoclose_preview_window_after_completion=1
+"Plugin 'Valloric/YouCompleteMe'
+"let g:ycm_autoclose_preview_window_after_completion=1
 
 "custom keys
-let mapleader=" "
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"let mapleader=" "
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-Plugin 'vim-syntastic/syntastic'
 
+Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'nvie/vim-flake8'
 
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Vim Surrounding
+Plugin 'tpope/vim-surround'
+
 let python_highlight_all=1
 syntax on
 

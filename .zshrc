@@ -128,10 +128,25 @@ alias doc="cd /Users/rohit/Documents"
 alias cls="clear"
 alias epic="cd /Users/rohit/Documents/epic/aml_github/"
 alias sl="ls"
+alias app="cd /Users/rohit/Documents/epic/app_github/app/"
+alias aml="cd /Users/rohit/Documents/epic/aml_github/aml/"
 alias backup="cd /Users/rohit/Documents/tmp/BACKUP"
 alias config='/usr/bin/git --git-dir=/Users/rohit/.cfg/ --work-tree=/Users/rohit'
-# Vim Locale Error
+# alias mysql=/usr/local/mysql/bin/mysql
+# alias mysqladmin=/usr/local/mysql/bin/mysqladmin# Vim Locale Error
 export LC_ALL=en_US.UTF-8
 # Tmux path for conda
 export PATH="/Users/rohit/anaconda3/bin:$PATH"
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
+# Android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+# Add java
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+## Vim binding
+bindkey -v

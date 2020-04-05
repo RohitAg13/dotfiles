@@ -12,6 +12,13 @@ set mouse=a
 " set line number and relatice number
 set nu rnu
 
+" set hightlight search and incremental search
+set incsearch
+set hlsearch
+
+" Setup tags to be able to jump around
+set tags=~/.tags
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -50,6 +57,12 @@ Plugin 'altercation/vim-colors-solarized'
 " Vim Surrounding
 Plugin 'tpope/vim-surround'
 
+" Vim Black formatter
+Plugin 'psf/black'
+
+" Vim NerdTree
+Plugin 'scrooloose/nerdtree'
+
 let python_highlight_all=1
 syntax on
 
@@ -74,3 +87,9 @@ nnoremap <C-H> <C-W><C-H>
 
 " Enable folding with the spacebar
 nnoremap <space> za
+
+" TAGS
+function Tags()
+  ! ctags -R -f .tags; if [ -e .gitignore ] ; then echo ".tags" >> .gitignore ; fi ;
+endfunction
+

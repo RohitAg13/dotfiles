@@ -144,6 +144,9 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+# Gem home
+export GEM_HOME="/Users/rohit/.gem"
+export PATH="$GEM_HOME/bin:$PATH"
 # Add java
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

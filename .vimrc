@@ -63,6 +63,12 @@ Plugin 'psf/black'
 " Vim NerdTree
 Plugin 'scrooloose/nerdtree'
 
+" Fuzzy file finder
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" Powerline
+Plugin 'lokaltog/vim-powerline'
+
 let python_highlight_all=1
 syntax on
 

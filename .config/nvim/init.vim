@@ -520,10 +520,10 @@ Plug 'sickill/vim-pasta'
 " }}}
 
 " UltiSnips {{{
-    Plug 'SirVer/ultisnips' " Snippets plugin
-    let g:UltiSnipsExpandTrigger="<C-l>"
-    let g:UltiSnipsJumpForwardTrigger="<C-j>"
-    let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+"    Plug 'SirVer/ultisnips' " Snippets plugin
+"    let g:UltiSnipsExpandTrigger="<C-l>"
+"    let g:UltiSnipsJumpForwardTrigger="<C-j>"
+"    let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 " }}}
 
 " coc {{{
@@ -542,8 +542,8 @@ Plug 'sickill/vim-pasta'
     \ 'coc-vimlsp',
     \ 'coc-emmet',
     \ 'coc-prettier',
-    \ 'coc-ultisnips'
     \ ]
+    "    \ 'coc-ultisnips'
 
     "autocmd CursorHold * silent call CocActionAsync('highlight')
 
@@ -680,7 +680,17 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'kien/ctrlp.vim'
 
 Plug 'kshenoy/vim-signature'
-" }}}
+
+" Black Formatter
+Plug 'psf/black'
+let g:black_linelength = 79
+
+"Wakatime
+Plug 'wakatime/vim-wakatime' 
+
+
+" Vim-Gutentag for managing Ctags
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 
@@ -705,9 +715,9 @@ let g:ctrlp_mruf_relative = 1
         " let ayucolor="dark"   " for dark version of theme
         colorscheme ayu
 
-        " set background=dark
+        set background=dark
         " set background=light
-        " colorscheme PaperColor
+        colorscheme PaperColor
 
         " colorscheme nord
 
@@ -787,3 +797,6 @@ if !hasmapto("<Plug>VisualDecrement")
 endif
 
 let &cpo = s:cpo_save
+
+
+

@@ -79,7 +79,9 @@ plugins=(tmux
        	zsh-syntax-highlighting
        	python
        	pip
-       	pipenv)
+       	pipenv
+	wakatime
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -132,6 +134,7 @@ alias app="cd /Users/rohit/Documents/epic/app_github/app/"
 alias aml="cd /Users/rohit/Documents/epic/aml_github/aml/"
 alias backup="cd /Users/rohit/Documents/tmp/BACKUP"
 alias config='/usr/bin/git --git-dir=/Users/rohit/.cfg/ --work-tree=/Users/rohit'
+alias vi="nvim"
 # alias mysql=/usr/local/mysql/bin/mysql
 # alias mysqladmin=/usr/local/mysql/bin/mysqladmin# Vim Locale Error
 export LC_ALL=en_US.UTF-8
@@ -152,4 +155,30 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ## Vim binding
-bindkey -v
+#bindkey -v
+
+## Lua love alias
+alias love="/Applications/love.app/Contents/MacOS/love"
+
+# startup command
+#random number between 0 to 10, if 1 then print
+if [ 3 -gt $(python -S -c "import random; print(random.randrange(0,10))") ]; then
+    fortune | cowsay -f tux | lolcat -a -d 1
+fi
+
+# Poetry
+#export PATH=$PATH:$HOME/.poetry/bin
+
+# Starship shell prompt
+eval "$(starship init zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/rohit/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/rohit/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/rohit/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/rohit/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Kubectl Autocomplete
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi

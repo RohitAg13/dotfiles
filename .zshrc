@@ -11,7 +11,8 @@ export ZSH="/Users/rohit/.oh-my-zsh"
 ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator )
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
 # Set list of themes to pick from when loading at random
@@ -80,7 +81,6 @@ plugins=(tmux
        	python
        	pip
        	pipenv
-	wakatime
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -135,6 +135,7 @@ alias aml="cd /Users/rohit/Documents/epic/aml_github/aml/"
 alias backup="cd /Users/rohit/Documents/tmp/BACKUP"
 alias config='/usr/bin/git --git-dir=/Users/rohit/.cfg/ --work-tree=/Users/rohit'
 alias vi="nvim"
+alias dps="docker ps --format 'table {{.Image}}\t{{.Ports}}\t{{.Names}}'"
 # alias mysql=/usr/local/mysql/bin/mysql
 # alias mysqladmin=/usr/local/mysql/bin/mysqladmin# Vim Locale Error
 export LC_ALL=en_US.UTF-8
@@ -182,3 +183,5 @@ if [ -f '/Users/rohit/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '
 if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
+
+export PATH="$HOME/.poetry/bin:$PATH"

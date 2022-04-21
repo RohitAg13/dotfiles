@@ -2,13 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/rohit/.oh-my-zsh"
+export ZSH="/home/rohit/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator )
@@ -77,7 +76,6 @@ plugins=(tmux
 	vscode
 	git
 	zsh-autosuggestions
-       	zsh-syntax-highlighting
        	python
        	pip
        	pipenv
@@ -109,14 +107,14 @@ source $ZSH/oh-my-zsh.sh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/rohit/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/rohit/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/rohit/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/rohit/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/rohit/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/rohit/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/rohit/anaconda3/bin:$PATH"
+        export PATH="/home/rohit/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -125,59 +123,24 @@ unset __conda_setup
 # Example aliases
 alias zshconfig="vi ~/.zshrc"
 alias ohmyzsh="vi ~/.oh-my-zsh"
-alias tmp="cd /Users/rohit/Documents/tmp"
-alias doc="cd /Users/rohit/Documents"
+alias tmp="cd ~/Documents/tmp"
+alias doc="cd ~/Documents"
 alias cls="clear"
-alias epic="cd /Users/rohit/Documents/epic/aml_github/"
 alias sl="ls"
-alias app="cd /Users/rohit/Documents/epic/app_github/app/"
-alias aml="cd /Users/rohit/Documents/epic/aml_github/aml/"
-alias backup="cd /Users/rohit/Documents/tmp/BACKUP"
-alias config='/usr/bin/git --git-dir=/Users/rohit/.cfg/ --work-tree=/Users/rohit'
+alias backup="cd ~/Documents/tmp/BACKUP"
+alias config='/usr/bin/git --git-dir=/home/rohit/.cfg/ --work-tree=/home/rohit'
 alias vi="nvim"
 alias dps="docker ps --format 'table {{.Image}}\t{{.Ports}}\t{{.Names}}'"
 # alias mysql=/usr/local/mysql/bin/mysql
 # alias mysqladmin=/usr/local/mysql/bin/mysqladmin# Vim Locale Error
 export LC_ALL=en_US.UTF-8
 # Tmux path for conda
-export PATH="/Users/rohit/anaconda3/bin:$PATH"
-# eval $(thefuck --alias)
-# Android
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-# Gem home
-export GEM_HOME="/Users/rohit/.gem"
-export PATH="$GEM_HOME/bin:$PATH"
-# Add java
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
+export PATH="~/anaconda3/bin:$PATH"
 ## Vim binding
 #bindkey -v
 
-## Lua love alias
-alias love="/Applications/love.app/Contents/MacOS/love"
-
-# startup command
-#random number between 0 to 10, if 1 then print
-if [ 3 -gt $(python -S -c "import random; print(random.randrange(0,10))") ]; then
-    fortune | cowsay -f tux | lolcat -a -d 1
-fi
-
-# Poetry
-#export PATH=$PATH:$HOME/.poetry/bin
-
 # Starship shell prompt
 eval "$(starship init zsh)"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/rohit/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/rohit/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/rohit/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/rohit/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Kubectl Autocomplete
 if [ $commands[kubectl] ]; then

@@ -133,6 +133,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 Plug 'Yggdroot/indentLine'
+Plug 'github/copilot.vim'
 
 Plug 'szw/vim-maximizer'
 
@@ -432,7 +433,7 @@ Plug 'sickill/vim-pasta'
     let NERDTreeShowHidden=1
     " let NERDTreeDirArrowExpandable = '▷'
     " let NERDTreeDirArrowCollapsible = '▼'
-    let g:NERDTreeIndicatorMapCustom = {
+    let g:NERDTreeGitStatusIndicatorMapCustom= {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
@@ -508,15 +509,15 @@ Plug 'sickill/vim-pasta'
 " }}}
 
 " vim-fugitive {{{
-    Plug 'tpope/vim-fugitive'
-    nmap <silent> <leader>gs :Gstatus<cr>
-    nmap <leader>ge :Gedit<cr>
-    nmap <silent><leader>gr :Gread<cr>
-    nmap <silent><leader>gb :Gblame<cr>
-
-    Plug 'tpope/vim-rhubarb' " hub extension for fugitive
-    Plug 'junegunn/gv.vim'
-    Plug 'sodapopcan/vim-twiggy'
+"    Plug 'tpope/vim-fugitive'
+"    nmap <silent> <leader>gs :Gstatus<cr>
+"    nmap <leader>ge :Gedit<cr>
+"    nmap <silent><leader>gr :Gread<cr>
+"    nmap <silent><leader>gb :Gblame<cr>
+"
+"    Plug 'tpope/vim-rhubarb' " hub extension for fugitive
+"    Plug 'junegunn/gv.vim'
+"    Plug 'sodapopcan/vim-twiggy'
 " }}}
 
 " UltiSnips {{{
@@ -527,7 +528,7 @@ Plug 'sickill/vim-pasta'
 " }}}
 
 " coc {{{
-    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc.nvim', {'branch':'master', 'do': 'yarn install --frozen-lockfile'}
 
     let g:coc_global_extensions = [
     \ 'coc-css',
@@ -685,12 +686,12 @@ Plug 'kshenoy/vim-signature'
 Plug 'psf/black'
 let g:black_linelength = 79
 
-"Wakatime
-Plug 'wakatime/vim-wakatime' 
-
 
 " Vim-Gutentag for managing Ctags
 Plug 'ludovicchabant/vim-gutentags'
+if !executable('ctags')
+    let g:gutentags_dont_load = 1
+endif
 
 call plug#end()
 

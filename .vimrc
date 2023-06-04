@@ -69,9 +69,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Powerline
 Plugin 'lokaltog/vim-powerline'
 
-" Wakatime
-Plugin 'wakatime/vim-wakatime'
-
 let python_highlight_all=1
 syntax on
 

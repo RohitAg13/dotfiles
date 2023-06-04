@@ -151,3 +151,5 @@ export NVM_DIR="$HOME/.nvm"
 . "$HOME/.cargo/env"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -70,6 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
 plugins=(git tmux zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
@@ -118,30 +119,18 @@ alias tmp="cd ~/Documents/tmp"
 alias doc="cd ~/Documents"
 alias cls="clear"
 alias sl="ls"
-alias backup="cd ~/Documents/tmp/BACKUP"
-alias config='/usr/bin/git --git-dir=/home/rohit/.cfg/ --work-tree=/home/rohit'
-alias vi="nvim"
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias vi="vim"
 alias dps="docker ps --format 'table {{.Image}}\t{{.Ports}}\t{{.Names}}'"
-# alias mysql=/usr/local/mysql/bin/mysql
-# alias mysqladmin=/usr/local/mysql/bin/mysqladmin# Vim Locale Error
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias mkdir="mkdir -vp"
+alias brew="HOMEBREW_NO_AUTO_UPDATE=1 brew"
+
 export LC_ALL=en_US.UTF-8
 # Tmux path for conda
 export PATH="~/anaconda3/bin:$PATH"
-## Vim binding
-#bindkey -v
 
 # Starship shell prompt
 eval "$(starship init zsh)"
 
-# Kubectl Autocomplete
-if [ $commands[kubectl] ]; then
-  source <(kubectl completion zsh)
-fi
-
-export PATH="$HOME/.poetry/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
